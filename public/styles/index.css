@@ -1,0 +1,28 @@
+
+
+#social-icons{
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    margin-top: 20px;
+}
+
+#heading{
+    width: 50%;
+    margin: 100px auto auto auto;
+}
+
+#heading h2{
+    font-size: 1.8rem;
+    margin-bottom: 0;
+}
+
+#heading p{
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+#content{
+width: 50%;
+margin: 50px auto 150px auto;
+}

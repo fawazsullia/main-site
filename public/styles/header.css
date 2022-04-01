@@ -1,0 +1,17 @@
+#header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    }
+    
+    #logo{
+    font-weight: 600;
+    font-size: 1.2rem;
+    }
+    
+    #nav{
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    list-style: none;
+    }
