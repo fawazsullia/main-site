@@ -21,35 +21,35 @@
         <li><a href="/chatroom">Chat</a></li>
       </nav>
     </header>
-    <h2>Resume</h2>
-    <p>Download resume as pdf</p>
-    <section>
+    <h2 class="al-cnt">Resume</h2>
+    <p id="download-resume" class="al-cnt">Download resume as pdf</p>
+    <section id="info" class="cnt-div head-gap">
         
         <div>
-            <p>Languages</p>
-            <p>Javascript, Typescript, Java, Html, Css, SQL</p>
+            <p class="side-heads">Languages</p>
+            <p class="sub-txt">Javascript, Typescript, Java, Html, Css, SQL</p>
         </div>
 
 
         <div>
-            <p>Frameworks</p>
-            <p>React js, Gatsby js, Express js, Next js</p>
+            <p class="side-heads">Frameworks</p>
+            <p class="sub-txt">React js, Gatsby js, Express js, Next js</p>
         </div>
 
 
         <div>
-            <p>Database</p>
-            <p>Mongo DB, Postgresql</p>
+            <p class="side-heads">Database</p>
+            <p class="sub-txt">Mongo DB, Postgresql</p>
         </div>
 
         <div>
-            <p>Technologies</p>
-            <p>Node js, Git, Github, Heroku, AWS (basic), firebase, Graphql</p>
+            <p class="side-heads">Technologies</p>
+            <p class="sub-txt">Node js, Git, Github, Heroku, AWS (basic), firebase, Graphql</p>
         </div>
 
     </section>
 
-    <section>
+    <section id="experience" class="cnt-div head-gap">
         <h3>Experience</h3>
 
         <div>
@@ -81,7 +81,7 @@
 
     </section>
 
-    <section>
+    <section id="education" class="cnt-div head-gap">
         <h3>Education</h3>
         <div>
             <h4>Bachelor of Tech - Mechanical Engineering</h4>
@@ -89,12 +89,25 @@
         </div>
     </section>
 
+    <script>
+        const downloadResume = document.getElementById("download-resume");
+        downloadResume.addEventListener("click", async ()=>{
+            const a = await fetch("/download/resume")
+            const blob = await a.blob()
+            const url = window.URL.createObjectURL(blob)
+            const tempLink = document.createElement('a');
+            tempLink.style.display = 'none';
+            tempLink.href = url;
+            tempLink.target = "_blank"
+            tempLink.download = "Fawaz Resume"
+            tempLink.click()
+            setTimeout(() => {
+    window.URL.revokeObjectURL(url);
+  }, 100);
+        })
+
+    </script>
+
   </body>
 </html>
 
-<!--
-   Work on all aspects of digital marketing like content creation,
-SEO, google ads, Facebook ads and email marketing
-Work on increasing conversion rate of the overall revenue
-pipeline
--->

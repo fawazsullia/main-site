@@ -1,0 +1,44 @@
+body {
+  --heading-color: blueviolet;
+}
+
+.al-cnt {
+  text-align: center;
+}
+
+.cnt-div {
+  margin: 50px auto auto auto;
+  width: 50%;
+}
+
+.head-gap {
+  margin-bottom: 40px;
+}
+
+.side-heads {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--heading-color);
+}
+
+.sub-txt {
+  font-size: 0.9rem;
+}
+
+h3 {
+  font-size: 1.4rem;
+}
+
+h4 {
+  font-weight: 600;
+  color: var(--heading-color);
+}
+
+#download-resume:hover {
+  cursor: pointer;
+  color: brown;
+}
+
+li{
+    font-size: 0.9rem;
+}
