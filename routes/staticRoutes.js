@@ -15,6 +15,11 @@ router.get("/projects", (req,res)=>{
     res.status(200).sendFile(pathToViews + "/projects.html")
 })
 
+//path : /resume
+router.get("/resume", (req,res)=>{
+    res.status(200).sendFile(pathToViews + "/resume.html")
+})
+
 
 
 
