@@ -20,6 +20,11 @@ router.get("/resume", (req,res)=>{
     res.status(200).sendFile(pathToViews + "/resume.html")
 })
 
+//path : /chat
+router.get("/chatroom", (req,res)=>{
+    res.status(200).sendFile(pathToViews + "/chatroom.html")
+})
+
 
 
 
