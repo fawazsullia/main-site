@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Your Name for Chat</title>
+</head>
+<body>
+    <style>
+        #popup{
+            width: 50%;
+            margin: 50% auto auto auto ;
+            transform: translateY(-60%);
+            background-color: blueviolet;
+            padding: 10px 40px 20px 40px;
+        }
+
+        #title{
+            color: white;
+            font-weight: 500;
+        }
+
+    </style>
+    <div id="popup">
+        <p id="title">Enter your name</p>
+        <input id="inp" type="text"><br><br>
+        <button id="btn" type="button">Enter Chat</button>
+    </div>
+    <script>
+        const btn = document.getElementById("btn")
+        const inp = document.getElementById("inp")
+        let loc = ""
+
+        inp.addEventListener("change", (ev)=>{
+            console.log("hit")
+
+                loc = `/chatroom?name=${ev.target.value}`
+            })
+
+        btn.addEventListener("click", ()=> {
+            window.location.href = loc
+        })
+</script>
+</body>
+</html>
