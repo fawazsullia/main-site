@@ -30,6 +30,11 @@ router.get("/pre-chat", (req,res)=>{
     res.status(200).sendFile(pathToViews + "/pre-chat.html")
 })
 
+//path : /blog
+router.get("/blog", (req,res)=>{
+    res.status(200).sendFile(pathToViews + "/blog.html")
+})
+
 
 
 

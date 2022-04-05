@@ -17,6 +17,7 @@ res.status(500).json({message : "Something went wrong with server"})
 
 })
 
+module.exports = router
 
 
 

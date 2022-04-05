@@ -11,6 +11,7 @@ const {query} = require("./db/dbConfig")
 const staticRoutes = require("./routes/staticRoutes")
 const downloadRoutes =require("./routes/downloadRoutes");
 const apiRoutes = require("./routes/apiRoutes")
+const blogRoutes = require("./routes/blogRoutes")
 
 const {addRowQuery} = require("./db/chatQuery")
 
@@ -21,6 +22,7 @@ app.use("/static" , express.static("public"))
 app.use("/", staticRoutes )
 app.use("/download", downloadRoutes)
 app.use("/api", apiRoutes)
+app.use("/blog", blogRoutes)
 
 //handle socket connection
 io.on("connection", (socket)=>{
