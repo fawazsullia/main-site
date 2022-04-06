@@ -1,0 +1,28 @@
+.post{
+    width: 60%;
+    margin: 50px auto 50px auto;
+}
+
+.title{
+    margin: 50px auto auto auto;
+    width: 60%;
+}
+
+.post li{
+    font-size: 0.9rem;
+}
+
+.post pre{
+    margin: 10px auto 10px auto;
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+
+.hljs-comment{
+    color: red;
+}
+
+.hljs-keyword{
+    color: violet;
+}

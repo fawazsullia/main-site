@@ -1,10 +1,13 @@
 const blogPosts = [
-    { title : "Some random test title",
-        slug : "some-random-title",
+    { title : "Build a Password Generator API on Nodejs",
+        slug : "password-generator-api",
         id : 1 },
-        { title : "Some random test title 2",
-        slug : "some-random-title",
-        id : 2 }
+        { title : "How I built a simple 'word guessing game' using Javascript",
+        slug : "word-guessing-game-javascript",
+        id : 2 },
+        { title : "Reduce React app loading time with lazy loading",
+        slug : "react-lazy-load",
+        id : 3 }
 
 ]
 

@@ -13,7 +13,8 @@ fetchBlogPosts().then((blogPosts)=>{
 
 
 function renderBlogPost(postData) {
-let el =  document.createElement("p")
+let el =  document.createElement("li")
+el.classList.add("post-title")
 let link = document.createElement("a")
 link.href = `/blog/${postData.slug}`
 link.innerText = postData.title
