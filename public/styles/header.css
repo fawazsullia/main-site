@@ -15,3 +15,7 @@
     gap: 15px;
     list-style: none;
     }
+
+    #nav li:hover{
+        font-weight: 500;
+    }

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles/global.css" />
+    <link rel="stylesheet" href="/static/styles/blogTemplate.css" />
+    <link rel="stylesheet" href="/static/styles/header.css" />
+    <title>Reduce React app loading time with lazy loading</title>
+</head>
+<body>
+    <header id="header">
+        <p id="logo" class="fn-pp"><a href="/">Fawaz Sullia</a></p>
+          <nav id="nav" class="fn-rb">
+            <li><a href="/">About</a></li>
+            <li><a href="/projects">Projects</a></li>
+            <li><a href="/resume">Resume</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/pre-chat">Chat</a></li>
+          </nav>
+        </header>
+    <section class="title">
+<h1>Build a Password Generator API on Nodejs</h1>
+    </section>
+
+    <section class="post">
+        <p>When I pushed a front end portfolio project to production, I noticed that there was a delay when the web app loaded for the first time.</p>
+<p>Being a beginner, I started researching why. Here&#39;s what I found out:</p>
+<p>React is based on components ( obviously ) and it makes use of bundlers like webpack to bundle up all the imports ( components, views etc) into a single file, which is then loaded when the user first opens the app.</p>
+<p>This means, even if the user never visits a particular component, it is still loaded.</p>
+<p>How do we solve this? By code splitting.</p>
+<p>The solution is to dynamically import components depending on the route or components the user is trying to access. This results in only those components loading, thereby reducing the load time.</p>
+<p>Here&#39;s how the syntax is;</p>
+<p>Without lazy, <code>import About from &#39;./about&#39;</code></p>
+<p>With lazy, <code>const About = React.lazy(()=&gt; {import &#39;./about&#39;}</code></p>
+<p>Additionally, we use Suspense, which allows us to use a fallback when the components are loading.</p>
+<p>Example:</p>
+<p><code>&lt;Suspense fallback={&lt;p&gt;Loading&gt;&lt;/p&gt;}&gt;
+   &lt;App /&gt;
+   &lt;/Suspense&gt;</code></p>
+<p>For a detailed explanation on this, visit <a href="https://reactjs.org/docs/code-splitting.html">https://reactjs.org/docs/code-splitting.html</a></p>
+
+    </section>
+    
+</body>
+</html>

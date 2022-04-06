@@ -1,0 +1,15 @@
+h2{
+    margin-top: 20px;
+    text-align: center;
+}
+
+#posts{
+    width: 50%;
+    margin: 50px auto auto auto;
+}
+
+.post-title{
+    color: blue;
+    font-size: 1.2rem;
+    margin-top: 10px;
+}

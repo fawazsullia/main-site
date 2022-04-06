@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles/global.css" />
+    <link rel="stylesheet" href="/static/styles/blogTemplate.css" />
+    <link rel="stylesheet" href="/static/styles/header.css" />
+    <title>How I built a simple 'word guessing game' using Javascript</title>
+</head>
+<body>
+    <header id="header">
+        <p id="logo" class="fn-pp"><a href="/">Fawaz Sullia</a></p>
+          <nav id="nav" class="fn-rb">
+            <li><a href="/">About</a></li>
+            <li><a href="/projects">Projects</a></li>
+            <li><a href="/resume">Resume</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/pre-chat">Chat</a></li>
+          </nav>
+        </header>
+    <section class="title">
+<h1>Build a Password Generator API on Nodejs</h1>
+    </section>
+
+    <section class="post">
+        <p>I wanted to build something fun for my portfolio. After spending sometime thinking, I decided to code a game that was popular in my childhood.</p>
+<p><strong>Hangman</strong></p>
+<p>Players will have to fill the dashes with letters, until they guess the word. The game ends if the player guesses the correct word or if he chooses the wrong letter 5 times.</p>
+<p>Here’s how the game looks:</p>
+<p><img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1621783901513/3zLMxFv1_.png" alt="hangman2.png"></p>
+<p>Before we start building, let&#39;s see what the game needs to do.</p>
+<ol>
+<li>Generate a random word</li>
+<li>Generate dashes for the players to fill letters</li>
+<li>Provide letters for the players to choose</li>
+<li>End the game when the player loses or wins</li>
+</ol>
+<p>Now, with that sorted, lets start building.</p>
+<p>Also, you might want to keep <a href="https://fawazsullia.github.io/guesstheword.github.io/game.html">the game</a> and the <a href="https://github.com/fawazsullia/guesstheword.github.io">source code</a> open for reference.</p>
+<h2 id="html-">HTML:</h2>
+<p>The basic structure of the game is quite simple.</p>
+<ol>
+<li><p>A section for the title : This section contains the title and the number of chances a player has left</p>
+</li>
+<li><p>A section for the word: The blank space for the word is displayed here. We will dynamically display this, depending on the word length</p>
+</li>
+<li><p>A section for the letters: English alphabet to select will be displayed here. You can create a span tag for each letter, but it is much easier to do this with Javascript.</p>
+</li>
+</ol>
+<h2 id="styling">Styling</h2>
+<p>Styling entirely depends on your preferences, but to get started, here’s the link to my <a href="https://github.com/fawazsullia/guesstheword.github.io/blob/master/game.css">stylesheet</a>.</p>
+<p>##The dynamics of the game ( Javascript )</p>
+<p>As I said earlier, we need to create a <strong>section of alphabets</strong> that the players can select. </p>
+<p>Steps:</p>
+<ol>
+<li>Create an array of alphabets, from a - z</li>
+<li>Map through this array with array.map</li>
+<li>For each alphabet on the array, create a span node, set the id to the alphabet and set a common classname (&quot;alphabet&quot;)</li>
+<li>Create a text node with the letter as the inner text</li>
+<li>Append the textnode to the span and the span to our div ( alphabet section)</li>
+</ol>
+<p>It should look something like this ( after styling )</p>
+<p><img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1621784019540/4QeRUjBH6.png" alt="alphabetsection.png"></p>
+<h3 id="fetching-a-random-word-">Fetching a random word.</h3>
+<p>I’m sure you have heard about the acronym <strong>API</strong> before. We will be using an API called ‘<strong>Random word Api</strong>’ by M C Naveen, to generate a random word. </p>
+<p>The endpoint we are going to use is <a href="https://random-words-api.vercel.app/word">https://random-words-api.vercel.app/word</a>.</p>
+<p>Steps:</p>
+<ol>
+<li>Fetch request at endpoint</li>
+<li>Resolve the promise with .then. </li>
+<li>Resolve the json promise returned</li>
+<li>Inside the callback, invoke a function that adds functionality to the game. By doing this, we make sure that the game becomes functional only after the fetch is successful </li>
+</ol>
+<h3 id="the-game-function-">The game function:</h3>
+<p>Let’s split the fetched word into an array and store it.</p>
+<p>To create empty spaces for the players to fill in, we use a similar method we used to create alphabets, but instead of an alphabet, the textnode will be an empty string.</p>
+<p>Let’s then append it to the div called word section.</p>
+<p>It should look like this.</p>
+<p><img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1621783855935/gy7kUDoDa.png" alt="hangman.png"></p>
+<p>Also, using foreach, we add an event listener to each alphabet.</p>
+<p>We now define a call back for the event listener (click) we added in each letter, so that whenever a player clicks a letter, the call back is executed.</p>
+<h3 id="inside-the-callback">Inside the callback</h3>
+<ol>
+<li>Select the letter with event.taget.innertext</li>
+<li>Check if the letter is in the word we fetched with array.includes</li>
+<li>Mark the letter as selected in the DOM ( for styling )</li>
+</ol>
+<p>Now, the conditional. We have 2 conditions. \
+a. The selected letter is in the word fetched. 
+b. The selected letter isn’t.</p>
+<h3 id="selected-letter-is-in-the-word">Selected letter is in the word</h3>
+<ol>
+<li>Check where the selected letter is in the word and store it in an array(indexes). This lets us store multiple values.</li>
+<li>With DOM manipulation, add the letter in position stored in the array indexes</li>
+<li>Store the number of elements in the indexes array in a variable.</li>
+<li>If the variable becomes equal to word length, the player wins the game.</li>
+</ol>
+<h3 id="selected-letter-is-not-in-the-word">Selected letter is not in the word</h3>
+<ol>
+<li>Increase the false count by 1</li>
+<li>When false count is 5, game over</li>
+</ol>
+<p>That’s it! You successfully created a Word Game. </p>
+<p>Feel free to build this on your own and modify it as you see fit.</p>
+<p>If you have questions or improvements, feel free to ping me here.</p>
+
+    </section>
+    
+</body>
+</html>

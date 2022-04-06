@@ -17,6 +17,7 @@ fetch("/api/get-chats")
     return res.json()
 })
 .then((response)=>{
+    if(response.length < 0) displayMessage({userName : "Server", message : "No chats"})
     for(let i = response.length-1; i>=0; i--){
         displayMessage(response[i])
     }
