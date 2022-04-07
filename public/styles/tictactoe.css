@@ -1,0 +1,45 @@
+#heading{
+    color: blue;
+    text-align: center;
+}
+
+#game{
+    display: grid;
+    grid-template-columns: 50px 50px 50px 50px 50px;
+    grid-template-rows: 50px 50px 50px 50px 50px;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.cell{
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    color: red;
+}
+
+.game-over{
+    display: none;
+
+}
+
+.visible{
+    display: block;
+    position: absolute;
+    border: solid 1px black;
+    padding: 50px 70px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+}
+
+#play-again{
+    text-align: center;
+    background-color: greenyellow;
+    border: none;
+    outline: none;
+    padding: 5px;
+}

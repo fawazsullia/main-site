@@ -10,15 +10,28 @@
     <style>
         #popup{
             width: 50%;
-            margin: 30% auto auto auto ;
-            transform: translateY(-80%);
+            margin: 10% auto auto auto ;
             background-color: blueviolet;
             padding: 10px 40px 20px 40px;
+        }
+
+        #popup button{
+            padding: 5px 10px;
+            background-color: white;
+            color: black;
+            border: none;
+            outline: none;
         }
 
         #title{
             color: white;
             font-weight: 500;
+        }
+        .go-home{
+            text-align: center;
+        }
+        .go-home a{
+            text-decoration: none;
         }
 
     </style>
@@ -27,19 +40,25 @@
         <input id="inp" type="text"><br><br>
         <button id="btn" type="button">Enter Chat</button>
     </div>
+    <p class="go-home"><a href="/">Go Home</a></p>
     <script>
         const btn = document.getElementById("btn")
         const inp = document.getElementById("inp")
         let loc = ""
 
         inp.addEventListener("change", (ev)=>{
-            console.log("hit")
 
                 loc = `/chatroom?name=${ev.target.value}`
             })
 
         btn.addEventListener("click", ()=> {
-            window.location.href = loc
+            if(loc.replace("/chatroom?name=", "")===""){
+                alert("Enter a name")
+            }
+            else{
+                window.location.href = loc
+            }
+            
         })
 </script>
 </body>

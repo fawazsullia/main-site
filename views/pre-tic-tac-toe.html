@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Tic Tac Toe</title>
+</head>
+<body>
+    <style>
+        .btn{
+            padding: 30px 50px;
+            margin-top: 40px;
+            text-align: center;
+            background-color: blueviolet;
+            color: white;
+            border: none;
+        }
+        .btn:hover{
+            cursor: pointer;
+            transform: scale(1.2);
+            transition-duration: 300ms;
+        }
+        .go-home{
+            text-align: center;
+            margin-top: 50px;
+        }
+        .go-home a{
+            text-decoration: none;
+
+        }
+
+        
+    </style>
+   <div>
+       <h2 style="text-align: center;">Welcome to Tic-Tac-Toe</h2>
+           <div style="margin : 100px auto auto auto;width: 50vw;">
+            <p style="font-size: 1rem; text-align: center;">Select your difficulty</p>
+            <div style="display: flex; justify-content: center; gap : 20px">
+               <button class="btn" id="3">3X3</button>
+               <button class="btn" id="5">5X5</button>
+               <button class="btn" id="7">7X7</button>
+            </div>
+            <p class="go-home" ><a href="/">Go Home</a></p>
+            </div>
+   </div> 
+   <script>
+    let path = "/tic-tac-toe?size="
+    document.getElementById("3").addEventListener("click", ()=> {window.location.href = path + "3"})
+    document.getElementById("5").addEventListener("click", ()=> {window.location.href = path + "5"})
+    document.getElementById("7").addEventListener("click", ()=> {window.location.href = path + "7"})
+
+    
+   </script>
+</body>
+</html>
