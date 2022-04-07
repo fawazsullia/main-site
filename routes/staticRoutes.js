@@ -41,6 +41,17 @@ router.get("/blog", async (req,res)=>{
     res.status(200).send(toSend)
 })
 
+//path : /blog
+router.get("/tic-tac-toe", async (req,res)=>{
+    const toSend = await joinHtmlPage("tic-tac-toe.html", "Play Game", "Some random meta description", "tictactoe")
+    res.status(200).send(toSend)
+})
+
+//path : /pre-tic-tac-toe
+router.get("/pre-tic-tac-toe", async (req,res)=>{
+    res.status(200).sendFile(pathToViews + "/pre-tic-tac-toe.html")
+
+})
 
 
 
