@@ -6,9 +6,10 @@ async function fetchBlogPosts() {
 }
 
 fetchBlogPosts().then((blogPosts)=>{
-    blogPosts.forEach(el => {
-        renderBlogPost(el)
-    });
+    console.log(blogPosts)
+  for(let key in blogPosts){
+      renderBlogPost(blogPosts[key])
+  }
 })
 
 
