@@ -16,6 +16,8 @@ const apiRoutes = require("./routes/apiRoutes")
 const blogRoutes = require("./routes/blogRoutes")
 
 const {addRowQuery} = require("./db/chatQuery");
+const {insertRow} = require("./db/analyticsQuery");
+
 
 //middlewares
 app.use("/static" , express.static("public"))
@@ -27,17 +29,19 @@ app.use("/download", downloadRoutes)
 app.use("/api", apiRoutes)
 app.use("/blog", blogRoutes)
 
-let temp = []
 
 
-function clbc(hit, deviceType, country, region, timezone){
-temp.push({hit,deviceType,country,region, timezone})
+async function clbc(hit,uniqueHit, deviceType, country, region, timezone){
+try{
+const res =await query(insertRow, [hit, uniqueHit, deviceType, country, region, timezone])
+}
+catch(e){
+res.status(400).json({message : "Something went wrong with server"})
+}
+
 }
 
 
-app.get("/test", (req,res)=>{
-  res.json(temp)
-})
 
 //handle socket connection
 io.on("connection", (socket)=>{
