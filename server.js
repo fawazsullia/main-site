@@ -30,8 +30,8 @@ app.use("/blog", blogRoutes)
 let temp = []
 
 
-function clbc(hit, deviceType, country, region, timeZone){
-temp.push({hit,deviceType,country,region, timeZone})
+function clbc(hit, deviceType, country, region, timezone){
+temp.push({hit,deviceType,country,region, timezone})
 }
 
 
