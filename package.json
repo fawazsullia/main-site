@@ -20,7 +20,7 @@
   "homepage": "https://github.com/fawazsullia/main-site#readme",
   "dependencies": {
     "express": "^4.17.3",
-    "express-request-analytics": "^1.0.4",
+    "express-request-analytics": "^1.0.5",
     "pg": "^8.7.3",
     "socket.io": "^4.4.1"
   },
