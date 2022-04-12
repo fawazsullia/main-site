@@ -33,7 +33,7 @@ app.use("/blog", blogRoutes)
 
 async function clbc(hit,uniqueHit, deviceType, country, region, timezone){
 try{
-const res =await query(insertRow, [hit, uniqueHit, deviceType, country | "UAE", region | "UAE", timezone | "UAE"])
+const res =await query(insertRow, [hit, uniqueHit, deviceType, country, region, timezone])
 }
 catch(e){
 res.status(400).json({message : "Something went wrong with server"})
