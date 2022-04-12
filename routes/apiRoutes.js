@@ -26,5 +26,10 @@ router.get("/get-blogs", (req,res)=>{
 res.status(200).json(blogPosts)
 })
 
+//get analytics
+router.get("/analytics", (req,res)=>{
+    
+})
+
 
 module.exports = router

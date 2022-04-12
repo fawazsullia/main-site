@@ -1,14 +1,14 @@
 
         <main>
          <section class="analytics">
-            <div class="total-hits">0</div>
-            <div class="unique-hits">0</div>
-            <div class="highest-visit-country"></div>
-            <div class="highest-visit-device"></div>
+            <div><span id="total-hits" class="data">0</span> <span class="definition"> total hits</span></div>
+            <div><span id="unique-hits" class="data">0</span><span class="definition"> unique hits</span></div>
+            <div><span id="highest-visit-country" class="data">0</span><span class="definition"> country where traffic is most</span></div>
+            <div><span id="highest-visit-device" class="data">0</span><span class="definition"> device where traffic is most</span></div>
 
          </section>
          <section class="refresh">
-             <button>Refresh</button>
+             <button id="refresh-btn">Refresh</button>
          </section>
         </main>
         <script src="/static/scripts/analytics.js"></script>
