@@ -9,7 +9,6 @@ refreshBtn.addEventListener("click", ()=>{
 })
 
 function displayData(){
-console.log("hehe")
     async function fetchAnalytics() {
         const res = await fetch("/api/get-analytics")
         const data = await res.json()
