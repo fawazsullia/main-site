@@ -53,6 +53,12 @@ router.get("/pre-tic-tac-toe", async (req,res)=>{
 
 })
 
+//path: /analytics
+router.get("/analytics", async (req,res)=>{
+    const toSend = await joinHtmlPage("analytics.html", "Site analytics", "Some random meta description", "analytics")
+    res.status(200).send(toSend)
+})
+
 
 
 
