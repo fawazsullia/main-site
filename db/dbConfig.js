@@ -1,5 +1,7 @@
 const { Client, Pool} = require("pg")
-const connectionStringDev = `postgres://fawazsullia:HZ0Y2xkRgVLRORBVRMcdbWmOx6XNWRQH@dpg-cfmea9irrk07m3tmoh8g-a.frankfurt-postgres.render.com/fawazsulliadb`
+const dotenv = require("dotenv");
+dotenv.config();
+const connectionStringDev = process.env.DB_STRING;
 
 
 const pool = new Pool({
